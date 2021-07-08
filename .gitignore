@@ -1,0 +1,11 @@
+.idea
+venv
+*.log
+*.pyc
+node_modules/
+frontend/node_modules/
+app/static/
+app/templates/
+*.log.*
+*.bin
+web/
