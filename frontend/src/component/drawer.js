@@ -29,6 +29,7 @@ import AccountCircle from '@material-ui/icons/AccountCircle';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Acountview from './accounter';
+import ETFView from './ETF';
 import { Redirect,useHistory,withRouter   } from 'react-router-dom';
 const drawerWidth = 180;
 
@@ -133,10 +134,10 @@ export default function PersistentDrawerLeft(props) {
 
 
 var btnconf=[
-    {id:0,name:'趋势监测',icon:<ShowChartIcon/>,select:true},
-    {id:1,name:'仓位管理',icon:<AccountBalanceWalletIcon/>,select:false},
-    {id:2,name:'收益分析',icon:<ThumbUpIcon/>,select:false},
-    {id:3,name:'可转债',icon:<MonetizationOnIcon/>,select:false}
+    {id:0,name:'趋势量化',icon:<ShowChartIcon/>,select:true,component:<ETFView/>},
+    {id:1,name:'仓位管理',icon:<AccountBalanceWalletIcon/>,select:false,component:<Acountview/>},
+    {id:2,name:'收益分析',icon:<ThumbUpIcon/>,select:false,component:'收益分析-施工中'},
+    {id:3,name:'可转债',icon:<MonetizationOnIcon/>,select:false,component:'可转债-施工中'}
     
 ];
 const otherconf=[
@@ -296,7 +297,8 @@ const handleUserClose=()=>{
       >
         
         <div className={classes.drawerHeader} />
-        <div>{(current==1)?<Acountview/>:'鹿角量化'+btnconf[current].name}</div>
+        <div>{btnconf[current].component}</div>
+        
       </main>
       
     </div>

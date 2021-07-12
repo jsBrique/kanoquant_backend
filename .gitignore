@@ -9,3 +9,5 @@ app/templates/
 *.log.*
 *.bin
 web/
+dataset/
+*.csv

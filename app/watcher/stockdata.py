@@ -10,17 +10,8 @@ app.config['MONGOALCHEMY_DATABASE'] = 'Users'
 db = MongoAlchemy(app)
 
 
-class Account(db.Document):
-    uid=db.IntField()
-    username = db.StringField()
-    password = db.StringField()
-    apikey = db.StringField()  
-
-
-class AccountData(db.Document):
+class CodeData(db.Document):
     username = db.StringField()
     apikey = db.StringField()
-    # profits=db.ListField(db.FloatField())
-    # nowstock=db.ListField(db.ListField(db.StringField()))
-    position=db.ListField(db.AnythingField())
 
+    stockcode=db.ListField(db.AnythingField())
